@@ -53,8 +53,8 @@ function checkMail(form) {
     for (let i of form.elements)
         if (i.type == "email") {
             numDogs = i.value.match(/@/g);
-            numSpaces = (/" "/).test(i.value);
-            if (numDogs.length != 1 || numSpaces.length > 0) {
+            numSpaces = (/ /).test(i.value);
+            if (numDogs.length != 1 || numSpaces > 0) {
                 return showMailErr();
             }
         }
