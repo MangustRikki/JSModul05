@@ -49,11 +49,12 @@ function checkPass(form) {
 function checkMail(form) {
     let numDogs;
     let numSpaces;
+    debugger
     for (let i of form.elements)
         if (i.type == "email") {
             numDogs = i.value.match(/@/g);
             numSpaces = (/" "/).test(i.value);
-            if (numDogs != 1 || numSpaces.length > 0) {
+            if (numDogs.length != 1 || numSpaces.length > 0) {
                 return showMailErr();
             }
         }
